@@ -19,10 +19,6 @@ fn main() {
         println!("cargo:rustc-link-lib=dylib=nvds_batch_jpegenc");
     }
 
-    if cfg!(feature = "surface") {
-        println!("cargo:rustc-link-lib=dylib=nvbufsurface");
-    }
-
     if cfg!(feature = "surface_transform") {
         println!("cargo:rustc-link-lib=dylib=nvbufsurftransform");
     }

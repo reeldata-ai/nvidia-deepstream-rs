@@ -1,5 +1,6 @@
 [package]
 name = "nvidia-deepstream-sys"
+links = "nvbufsurface"
 version = "0.1.0"
 authors = ["Yasuhiro Taniuchi"]
 license = "MIT"
@@ -20,4 +21,3 @@ include = [
 [build-dependencies]
 bindgen = "0.63.0"
 pkg-config = "0.3.26"
-

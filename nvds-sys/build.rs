@@ -29,6 +29,13 @@ fn main() {
     // Rerun build if the env var changes
     println!("cargo:rerun-if-env-changed=DEEPSTREAM_PATH");
 
+    // Surface bindings always require the native library from this SDK.
+    println!(
+        "cargo:rustc-link-search=native={}",
+        PathBuf::from(&ds_root).join("lib").display()
+    );
+    println!("cargo:rustc-link-lib=dylib=nvbufsurface");
+
     // Configure Bindgen
     let mut bindings = bindgen::Builder::default()
         .header("wrapper.h")
